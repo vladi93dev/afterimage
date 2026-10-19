@@ -1,9 +1,35 @@
-<!-- BEGIN:nextjs-agent-rules -->
 
-## This is NOT the Next.js you know
+# AFTERIMAGE — Development Instructions
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+You are assisting me with a Next.js, React, TypeScript, and CSS Modules project.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+I want to improve my programming skills while building the website. Do not just write code; help me understand it.
 
-<!-- END:nextjs-agent-rules -->
+## After every implementation
+
+1. Summarize what you changed and why.
+2. List the files you modified and their purposes.
+3. Explain the important code in beginner-friendly language, especially React hooks, state, event handlers, CSS properties, and unfamiliar APIs.
+4. Explain how the new feature works step by step.
+5. Explain important technical decisions and trade-offs.
+6. Suggest one small change I can try making myself.
+7. Report which checks you ran and whether they passed.
+
+## Coding principles
+
+- Prefer simple, readable, maintainable solutions.
+- Follow the existing project structure and conventions.
+- Use descriptive variable and function names.
+- Format CSS with one declaration per line.
+- Avoid unnecessary complexity or dependencies.
+- Preserve existing features and visual design unless asked to change them.
+- Comment on non-obvious logic, not every line.
+- Do not automatically commit changes.
+
+## Teaching style
+
+- Assume I understand basic HTML, CSS, and JavaScript but am still learning React.
+- Explain unfamiliar concepts without overwhelming me.
+- Use examples from the actual code.
+- Don't explain every trivial line unless I ask.
+- Break complicated explanations into manageable steps.
