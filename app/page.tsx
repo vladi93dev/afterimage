@@ -1,69 +1,300 @@
-import Image from "next/image";
+﻿import Image from "next/image";
+import Link from "next/link";
+import { FilmCard, type FeaturedFilm } from "./film-card";
+import { NewsletterForm, Search } from "./home-controls";
+import styles from "./page.module.css";
+
+const films: FeaturedFilm[] = [
+  {
+    id: "the-quiet-between",
+    title: "The Quiet Between",
+    subtitle: "A place out of time.",
+    synopsis: "Returning to an abandoned observatory, a solitary archivist discovers a town that appears on no map. As familiar voices echo through its concrete halls, the boundary between memory and the present begins to dissolve.",
+    director: "Mara Voss",
+    year: 2024,
+    genres: "Drama · Mystery · Surreal",
+    image: "film-quiet-between",
+    alt: "A lone figure approaches a circular concrete ruin in the mist.",
+  },
+  {
+    id: "hollow-tides",
+    title: "Hollow Tides",
+    subtitle: "Some things don't stay buried.",
+    synopsis: "A woman returns to her coastal village after the disappearance of her sister. Each night, the tide carries fragments of a forgotten ritual ashore, drawing her toward something the village has spent generations refusing to name.",
+    director: "Elias Rook",
+    year: 2023,
+    genres: "Folk horror · Psychological · Cult",
+    image: "film-hollow-tides",
+    alt: "A woman's face emerges from dark, still water.",
+  },
+  {
+    id: "the-receiver",
+    title: "The Receiver",
+    subtitle: "Some signals shouldn't be found.",
+    synopsis: "At a remote listening station, a technician intercepts a transmission that seems to describe events before they happen. Following the signal into a deserted landscape, he begins to suspect that someone is listening back.",
+    director: "Irena Vale",
+    year: 2025,
+    genres: "Sci-fi · Thriller · Experimental",
+    image: "film-receiver",
+    alt: "A figure crosses a rocky landscape beneath an immense radio telescope.",
+  },
+];
+
+function Arrow() {
+  return (
+    <span aria-hidden="true" className={styles.arrow}>
+      &#10230;
+    </span>
+  );
+}
+
+function Navigation({ footer = false }: { footer?: boolean }) {
+  return (
+    <nav
+      className={footer ? styles.footerNav : styles.navigation}
+      aria-label={footer ? "Footer navigation" : "Main navigation"}
+    >
+      <a href="#films">FILMS</a>
+      <a href="#journal">JOURNAL</a>
+      <a href="#manifesto">MANIFESTO</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className={styles.site}>
+      <a className={styles.skipLink} href="#main">
+        Skip to content
+      </a>
+      <div className={styles.opening}>
+        <header className={`${styles.header} ${styles.container}`}>
+          <Link className={styles.wordmark} href="/">
+            ELSEWHERE
+          </Link>
+          <Navigation />
+          <div className={styles.headerActions}>
+            <Search films={films} />
+            <a className={styles.joinLink} href="#join">
+              JOIN
+            </a>
+          </div>
+        </header>
+        <main id="main">
+          <section className={styles.hero} aria-labelledby="hero-title">
+            <div className={styles.heroArt}>
+              <Image
+                src="/images/approved/hero-architecture.webp"
+                alt="A solitary figure stands in a vast brutalist chamber, facing a tall opening of cold light."
+                fill
+                sizes="(max-width: 600px) 100vw, 52vw"
+                preload
+              />
+            </div>
+            <div className={`${styles.heroInner} ${styles.container}`}>
+              <div className={styles.heroCopy}>
+                <p className={styles.heroEyebrow}>
+                  ARTHOUSE
+                  <br />
+                  CULT CINEMA
+                  <br />
+                  FOR A DIFFERENT
+                  <br />
+                  WORLD
+                </p>
+                <h1 id="hero-title" className={styles.heroTitle}>
+                  SOME FILMS
+                  <br />
+                  STAY WITH YOU
+                  <br />
+                  <em>ELSEWHERE.</em>
+                </h1>
+                <p className={styles.heroDescription}>
+                  A curated home for the strange, the forgotten,
+                  <br className={styles.desktopBreak} /> and the films that see
+                  the world differently.
+                </p>
+                <a className={styles.button} href="#films">
+                  EXPLORE THE COLLECTION <Arrow />
+                </a>
+              </div>
+            </div>
+            <aside
+              className={styles.heroAside}
+              aria-label="Elsewhere's point of view"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <p className={styles.handwritten}>
+                Different
+                <br />
+                films
+                <br />
+                for a<br />
+                darker
+                <br />
+                tomorrow.
+              </p>
+              <p className={styles.sideMetadata}>
+                CINEMA
+                <br />
+                PEOPLE
+                <br />
+                PLACES
+                <br />
+                IDEAS
+                <br />
+                ESCAPE
+              </p>
+            </aside>
+          </section>
+
+          <section
+            id="films"
+            className={styles.featured}
+            aria-labelledby="films-title"
+          >
+            <div className={styles.container}>
+              <div className={styles.sectionHeading}>
+                <h2 id="films-title">FEATURED FILMS</h2>
+                <span className={styles.headingLine} aria-hidden="true" />
+                <p>THREE DOORS IN. MANY MORE BEYOND.</p>
+                <span className={styles.chevrons} aria-hidden="true">
+                  &#8249; &nbsp; &#8250;
+                </span>
+              </div>
+              <div className={styles.filmGrid}>
+                {films.map((film) => (
+                  <FilmCard key={film.id} film={film} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="manifesto"
+            className={styles.manifesto}
+            aria-labelledby="manifesto-title"
+          >
+            <div className={styles.manifestoArt}>
+              <Image
+                src="/images/approved/manifesto-sculpture.webp"
+                alt="A weathered sculptural face turns upward through a veil of grain and rain."
+                fill
+                sizes="(max-width: 600px) 100vw, 42vw"
+              />
+            </div>
+            <div className={`${styles.editorialInner} ${styles.container}`}>
+              <div className={styles.editorialCopy}>
+                <p className={styles.sectionEyebrow}>
+                  OUR MANIFESTO <span aria-hidden="true" />
+                </p>
+                <h2 id="manifesto-title">
+                  CINEMA
+                  <br />
+                  FOR THE UNSETTLED.
+                </h2>
+                <p id="about" className={styles.manifestoText}>
+                  Elsewhere exists for the misfits, the night-watchers,
+                  <br className={styles.desktopBreak} /> the beauty seekers, the
+                  ones who feel out of place.
+                  <br className={styles.desktopBreak} /> We champion films that
+                  disturb, question, and expand
+                  <br className={styles.desktopBreak} /> what cinema can be. No
+                  algorithms. No safe choices.
+                  <br className={styles.desktopBreak} /> Just bolder, stranger,
+                  more human stories.
+                </p>
+                <a className={styles.button} href="#about">
+                  READ THE MANIFESTO <Arrow />
+                </a>
+              </div>
+            </div>
+            <p
+              className={`${styles.sideMetadata} ${styles.manifestoMetadata}`}
+              aria-hidden="true"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+              STRANGER
+              <br />
+              BRAVER
+              <br />
+              DARKER
+              <br />
+              KINDER
+              <br />
+              CINEMA
+              <br />
+              ELSEWHERE
+            </p>
+          </section>
+
+          <section
+            id="join"
+            className={styles.signup}
+            aria-labelledby="join-title"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className={styles.signupArt}>
+              <Image
+                src="/images/approved/signup-door.webp"
+                alt="A small monolithic doorway glows on a desolate plain."
+                fill
+                sizes="(max-width: 600px) 100vw, 42vw"
+              />
+            </div>
+            <div className={`${styles.editorialInner} ${styles.container}`}>
+              <div className={styles.signupCopy}>
+                <p className={styles.sectionEyebrow}>
+                  STAY IN THE DARK <span aria-hidden="true" />
+                </p>
+                <h2 id="join-title">JOIN ELSEWHERE</h2>
+                <p id="journal" className={styles.signupText}>
+                  Occasional letters on forgotten films, new discoveries,
+                  <br className={styles.desktopBreak} /> and the strange corners
+                  of cinema.
+                </p>
+                <NewsletterForm />
+              </div>
+            </div>
+            <p
+              className={`${styles.handwritten} ${styles.signupNote}`}
+              aria-hidden="true"
+            >
+              Good
+              <br />
+              films
+              <br />
+              find
+              <br />
+              strange
+              <br />
+              people.
+            </p>
+          </section>
+        </main>
+      </div>
+      <footer className={styles.footer}>
+        <div className={`${styles.footerInner} ${styles.container}`}>
+          <Link className={styles.footerBrand} href="/">
+            ELSEWHERE
+          </Link>
+          <p>FILMS FOR A DIFFERENT WORLD.</p>
+          <Navigation footer />
+          <div className={styles.socialMarks} aria-hidden="true">
+            <span>𝕏</span>
+            <span>◎</span>
+            <svg viewBox="0 0 20 16">
+              <rect
+                x="1"
+                y="2"
+                width="18"
+                height="12"
+                rx="3"
+                fill="currentColor"
+              />
+              <path d="m8 5 5 3-5 3Z" fill="var(--color-background)" />
+            </svg>
+          </div>
         </div>
-      </main>
+      </footer>
     </div>
   );
 }

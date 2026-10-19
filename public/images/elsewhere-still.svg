@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="500" y1="0" x2="500" y2="1300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#343344"/><stop offset=".38" stop-color="#788999"/><stop offset=".57" stop-color="#a9a9b0"/><stop offset=".58" stop-color="#687b8c"/><stop offset="1" stop-color="#202530"/>
+    </linearGradient>
+    <linearGradient id="shore" x1="500" y1="800" x2="500" y2="1300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#343b48"/><stop offset="1" stop-color="#171820"/>
+    </linearGradient>
+    <radialGradient id="haze" cx="0" cy="0" r="1" gradientTransform="translate(630 620) rotate(90) scale(310 700)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c7bfcc" stop-opacity=".4"/><stop offset="1" stop-color="#c7bfcc" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".17"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  </defs>
+  <g filter="url(#grain)">
+    <path fill="url(#sky)" d="M0 0h1000v1300H0z"/>
+    <circle cx="725" cy="280" r="51" fill="#d7d2d7" opacity=".6" filter="url(#soft)"/>
+    <circle cx="725" cy="280" r="34" fill="#d7d2d7" opacity=".75"/>
+    <path d="M0 673 110 610 211 648 318 579 423 641 551 651 648 681H0Z" fill="#515d70" opacity=".55" filter="url(#soft)"/>
+    <path d="M0 717c240-18 368 16 1000-7M0 746c340-15 584 8 1000-7M80 790c270-12 477 7 920-6M160 823c230-4 480 14 840-8M350 858c270-12 340 6 650-2" stroke="#b3b5be" stroke-opacity=".18" stroke-width="2"/>
+    <path fill="url(#haze)" d="M0 0h1000v1300H0z"/>
+    <path d="m0 840 85-25 74 53 106 25 104 67 145 43 119 93 367 204H0V840Z" fill="url(#shore)"/>
+    <path d="m0 852 85-25 74 53 106 25 104 67 145 43 119 93 367 192" stroke="#98a0ae" stroke-opacity=".24" stroke-width="3"/>
+    <ellipse cx="377" cy="1016" rx="40" ry="7" fill="#151820" opacity=".5"/>
+    <circle cx="377" cy="910" r="10" fill="#1c1e28"/>
+    <path d="m369 923-9 52 7 8 3 33h7l3-35 4 35h7l-1-36 5-5-10-52h-16Z" fill="#1c1e28"/>
+    <path d="m369 929-10 35m27-35 12 31" stroke="#1c1e28" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

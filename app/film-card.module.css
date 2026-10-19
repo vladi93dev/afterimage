@@ -1,0 +1,204 @@
+.card {
+  position: relative;
+}
+
+.image {
+  overflow: hidden;
+}
+
+.image img {
+  transition: transform 300ms ease;
+}
+
+.trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 14px;
+  background: color-mix(in srgb, var(--color-background) 22%, transparent);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.diagonalArrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.card:focus-within .image img {
+  transform: scale(1.04);
+}
+
+.card:focus-within .overlay {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .card:hover .image img {
+    transform: scale(1.04);
+  }
+
+  .card:hover .overlay {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  width: min(860px, calc(100% - 40px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-secondary);
+  color: var(--color-text);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.dialog::backdrop {
+  background: color-mix(in srgb, var(--color-background) 86%, transparent);
+}
+
+.modalContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.modalImage {
+  position: relative;
+  min-height: 390px;
+  background: var(--color-surface);
+}
+
+.modalImage img {
+  object-fit: cover;
+}
+
+.details {
+  min-width: 0;
+  padding: 24px 28px 32px;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  margin: 0 0 24px auto;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+
+.close:hover {
+  border-color: var(--color-accent);
+}
+
+.close span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-muted);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.details h2 {
+  margin: 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.05;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.synopsis {
+  margin: 18px 0 24px;
+  color: var(--color-muted);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.metadata {
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.metadata div {
+  display: grid;
+  grid-template-columns: 65px minmax(0, 1fr);
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.metadata dt {
+  color: var(--color-muted);
+}
+
+.metadata dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .modalContent {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .modalImage {
+    min-height: 0;
+    aspect-ratio: 1.61;
+  }
+
+  .details {
+    padding: 16px 20px 24px;
+  }
+
+  .close {
+    margin-bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image img,
+  .overlay {
+    transition: none;
+  }
+
+  .card:is(:hover, :focus-within) .image img {
+    transform: none;
+  }
+}
