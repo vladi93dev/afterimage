@@ -63,7 +63,7 @@
   display: inline-flex;
   min-height: 36px;
   align-items: center;
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.17em;
 }
 .navigation a:hover,
@@ -115,7 +115,7 @@
   min-width: 0;
 }
 .heroEyebrow {
-  font-size: 7px;
+  font-size: 10px;
   line-height: 1.4;
   color: var(--color-muted);
   letter-spacing: 0.25em;
@@ -193,7 +193,7 @@
 }
 .sideMetadata {
   color: var(--color-muted);
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 0.2em;
   line-height: 2.25;
   margin: 0;
@@ -233,6 +233,7 @@
   background: var(--color-muted);
   opacity: 0.6;
 }
+
 .sectionHeading p {
   margin: 0 12px 0 4px;
   color: var(--color-muted);
@@ -275,20 +276,22 @@
 .filmSubtitle {
   font-family: var(--font-serif), Georgia, serif;
   color: var(--color-muted);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 0;
   line-height: 1.4;
 }
 .filmGenres {
-  font-size: 7px;
-  letter-spacing: 0.18em;
+  font-size: 8px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-muted);
   margin: 9px 0 0;
   line-height: 1.5;
 }
+
+
 .filmGenres::after {
   content: "";
   display: block;
@@ -444,7 +447,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 40px;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   color: var(--color-muted);
 }
@@ -589,7 +592,7 @@
     font-size: 8px;
   }
   .hero {
-    min-height: 590px;
+    min-height: 630px;
   }
   .heroInner {
     padding-top: 22px;
@@ -616,7 +619,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 270px;
+    height: 310px;
   }
   .heroArt img {
     object-position: center 65%;
@@ -629,6 +632,7 @@
     );
   }
   .heroAside {
+    display: none;
     top: auto;
     bottom: 35px;
     right: 22px;
@@ -891,5 +895,22 @@
   }
   .signupFields button {
     padding-inline: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .signupFields {
+    flex-direction: column;
+  }
+
+  .signupFields input {
+    width: 100%;
+  }
+
+  .signupFields button {
+    width: 100%;
+    justify-content: center;
+    border-left: 0;
+    border-top: 1px solid var(--color-accent);
   }
 }

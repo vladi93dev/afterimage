@@ -53,6 +53,10 @@
   opacity: 1;
 }
 
+
+
+
+
 @media (hover: hover) {
   .card:hover .image img {
     transform: scale(1.04);
@@ -74,10 +78,42 @@
   color: var(--color-text);
   overflow: auto;
   overscroll-behavior: contain;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 350ms cubic-bezier(0.22, 1, 0.36, 1), transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .dialog::backdrop {
   background: color-mix(in srgb, var(--color-background) 86%, transparent);
+  opacity: 0;
+  transition: opacity 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dialog[open]:not([data-closing]) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dialog[open]:not([data-closing])::backdrop {
+  opacity: 1;
+}
+
+.dialog[data-closing],
+.dialog[data-closing]::backdrop {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* A dialog starts hidden, so provide its first visible frame explicitly. */
+@starting-style {
+  .dialog[open]:not([data-closing]) {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .dialog[open]:not([data-closing])::backdrop {
+    opacity: 0;
+  }
 }
 
 .modalContent {
@@ -188,17 +224,29 @@
   }
 
   .close {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
+
+  .synopsis {
+  font-size: 17px;
+  line-height: 1.45;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
   .image img,
-  .overlay {
+  .overlay,
+  .dialog,
+  .dialog::backdrop {
     transition: none;
   }
 
   .card:is(:hover, :focus-within) .image img {
+    transform: none;
+  }
+
+  .dialog,
+  .dialog[open]:not([data-closing]) {
     transform: none;
   }
 }

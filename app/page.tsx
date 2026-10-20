@@ -1,8 +1,10 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
+import { EntranceAnimations } from "./entrance-animations";
 import { FilmCard, type FeaturedFilm } from "./film-card";
 import { NewsletterForm, Search } from "./home-controls";
 import styles from "./page.module.css";
+import entrance from "./entrance-animations.module.css";
 
 const films: FeaturedFilm[] = [
   {
@@ -55,7 +57,6 @@ function Navigation({ footer = false }: { footer?: boolean }) {
       aria-label={footer ? "Footer navigation" : "Main navigation"}
     >
       <a href="#films">FILMS</a>
-      <a href="#journal">JOURNAL</a>
       <a href="#manifesto">MANIFESTO</a>
       <a href="#about">ABOUT</a>
     </nav>
@@ -71,7 +72,7 @@ export default function Home() {
       <div className={styles.opening}>
         <header className={`${styles.header} ${styles.container}`}>
           <Link className={styles.wordmark} href="/">
-            ELSEWHERE
+            AFTERIMAGE
           </Link>
           <Navigation />
           <div className={styles.headerActions}>
@@ -82,8 +83,12 @@ export default function Home() {
           </div>
         </header>
         <main id="main">
+          <EntranceAnimations />
           <section className={styles.hero} aria-labelledby="hero-title">
-            <div className={styles.heroArt}>
+            <div
+              className={`${styles.heroArt} ${entrance.reveal} ${entrance.heroImage}`}
+              data-entrance="hero-image"
+            >
               <Image
                 src="/images/approved/hero-architecture.webp"
                 alt="A solitary figure stands in a vast brutalist chamber, facing a tall opening of cold light."
@@ -94,35 +99,45 @@ export default function Home() {
             </div>
             <div className={`${styles.heroInner} ${styles.container}`}>
               <div className={styles.heroCopy}>
-                <p className={styles.heroEyebrow}>
+                <p
+                  className={`${styles.heroEyebrow} ${entrance.reveal} ${entrance.heroEyebrow}`}
+                  data-entrance="hero-eyebrow"
+                >
                   ARTHOUSE
                   <br />
-                  CULT CINEMA
+                  INDEPENDENT
                   <br />
-                  FOR A DIFFERENT
+                  EXPERIMENTAL
                   <br />
-                  WORLD
+                  CINEMA
                 </p>
-                <h1 id="hero-title" className={styles.heroTitle}>
-                  SOME FILMS
+                <h1
+                  id="hero-title"
+                  className={`${styles.heroTitle} ${entrance.reveal} ${entrance.heroTitle}`}
+                  data-entrance="hero-title"
+                >
+                  ALL THE LIVES
                   <br />
-                  STAY WITH YOU
-                  <br />
-                  <em>ELSEWHERE.</em>
+                  WE HAVEN'T LIVED.
                 </h1>
-                <p className={styles.heroDescription}>
-                  A curated home for the strange, the forgotten,
-                  <br className={styles.desktopBreak} /> and the films that see
-                  the world differently.
+                <p
+                  className={`${styles.heroDescription} ${entrance.reveal} ${entrance.heroDescription}`}
+                  data-entrance="hero-description"
+                >
+                  An independent selection of strange and overlooked films.
                 </p>
-                <a className={styles.button} href="#films">
+                <a
+                  className={`${styles.button} ${entrance.reveal} ${entrance.heroCta}`}
+                  data-entrance="hero-cta"
+                  href="#films"
+                >
                   EXPLORE THE COLLECTION <Arrow />
                 </a>
               </div>
             </div>
             <aside
               className={styles.heroAside}
-              aria-label="Elsewhere's point of view"
+              aria-label="AFTERIMAGE's point of view"
             >
               <p className={styles.handwritten}>
                 Different
@@ -184,17 +199,20 @@ export default function Home() {
               />
             </div>
             <div className={`${styles.editorialInner} ${styles.container}`}>
-              <div className={styles.editorialCopy}>
+              <div
+                className={`${styles.editorialCopy} ${entrance.reveal} ${entrance.manifesto}`}
+                data-entrance="manifesto"
+              >
                 <p className={styles.sectionEyebrow}>
                   OUR MANIFESTO <span aria-hidden="true" />
                 </p>
                 <h2 id="manifesto-title">
-                  CINEMA
+                  THE WEIGHT OF
                   <br />
-                  FOR THE UNSETTLED.
+                  WHAT REMAINS.
                 </h2>
                 <p id="about" className={styles.manifestoText}>
-                  Elsewhere exists for the misfits, the night-watchers,
+                  AFTERIMAGE exists for the misfits, the night-watchers,
                   <br className={styles.desktopBreak} /> the beauty seekers, the
                   ones who feel out of place.
                   <br className={styles.desktopBreak} /> We champion films that
@@ -241,11 +259,14 @@ export default function Home() {
               />
             </div>
             <div className={`${styles.editorialInner} ${styles.container}`}>
-              <div className={styles.signupCopy}>
+              <div
+                className={`${styles.signupCopy} ${entrance.reveal} ${entrance.newsletter}`}
+                data-entrance="newsletter"
+              >
                 <p className={styles.sectionEyebrow}>
                   STAY IN THE DARK <span aria-hidden="true" />
                 </p>
-                <h2 id="join-title">JOIN ELSEWHERE</h2>
+                <h2 id="join-title">JOIN AFTERIMAGE</h2>
                 <p id="journal" className={styles.signupText}>
                   Occasional letters on forgotten films, new discoveries,
                   <br className={styles.desktopBreak} /> and the strange corners
@@ -274,7 +295,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={`${styles.footerInner} ${styles.container}`}>
           <Link className={styles.footerBrand} href="/">
-            ELSEWHERE
+            AFTERIMAGE
           </Link>
           <p>FILMS FOR A DIFFERENT WORLD.</p>
           <Navigation footer />

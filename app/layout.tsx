@@ -17,7 +17,7 @@ const editorialSerif = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "ELSEWHERE — Arthouse & Cult Cinema",
+  title: "AFTERIMAGE — Arthouse & Cult Cinema",
   description:
     "A curated home for the strange, the forgotten, and the films that see the world differently.",
 };

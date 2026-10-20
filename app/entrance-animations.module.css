@@ -1,0 +1,113 @@
+/* The default is fully visible; only the observer enables an entrance. */
+.reveal {
+  --entrance-delay: 0ms;
+  --entrance-duration: 760ms;
+}
+
+.reveal[data-entered="true"] {
+  animation-name: rise-in;
+  animation-duration: var(--entrance-duration);
+  animation-delay: var(--entrance-delay);
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Backwards covers the stagger delay, then releases all animated styles. */
+  animation-fill-mode: backwards;
+}
+
+.heroEyebrow {
+  --entrance-delay: 40ms;
+}
+
+.heroTitle {
+  --entrance-delay: 140ms;
+  --entrance-duration: 900ms;
+}
+
+.heroDescription {
+  --entrance-delay: 260ms;
+}
+
+.heroCta {
+  --entrance-delay: 380ms;
+}
+
+.heroImage {
+  --entrance-duration: 1400ms;
+}
+
+.heroImage[data-entered="true"] {
+  animation-name: image-in;
+}
+
+.filmCard:nth-of-type(2) {
+  --entrance-delay: 90ms;
+}
+
+.filmCard:nth-of-type(3) {
+  --entrance-delay: 180ms;
+}
+
+.manifesto {
+  --entrance-duration: 1000ms;
+}
+
+.manifesto[data-entered="true"] {
+  animation-name: editorial-in;
+}
+
+.newsletter {
+  --entrance-duration: 850ms;
+}
+
+.newsletter[data-entered="true"] {
+  animation-name: newsletter-in;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes image-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes editorial-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    clip-path: inset(0 0 8% 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes newsletter-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal[data-entered="true"] {
+    animation: none;
+  }
+}
