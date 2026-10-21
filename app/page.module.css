@@ -210,7 +210,7 @@
 }
 .featured {
   background: var(--color-secondary);
-  padding: 24px 0 14px;
+  padding: 70px 0 90px;
   border-block: 1px solid color-mix(in srgb, var(--color-muted) 7.5%, transparent);
 }
 .sectionHeading {
@@ -308,7 +308,7 @@
   background: var(--color-background);
 }
 .manifesto {
-  min-height: clamp(315px, 28vw, 420px);
+  min-height: clamp(370px, 32vw, 480px);
   background-image:
     linear-gradient(#090b1066, #090b1099),
     url("/images/approved/grain-texture.webp");
@@ -335,11 +335,11 @@
 }
 .editorialInner {
   display: grid;
-  grid-template-columns: 40.5% minmax(0, 1fr);
+ grid-template-columns: minmax(0, 1fr) 40.5%;
 }
 .editorialCopy {
   grid-column: 2;
-  padding: 28px 0 26px;
+  padding: 80px 0;
 }
 .sectionEyebrow {
   display: flex;
@@ -380,16 +380,18 @@
   right: 3%;
 }
 .signup {
-  min-height: clamp(178px, 15.8vw, 240px);
+ min-height: 320px;
   border-top: 1px solid color-mix(in srgb, var(--color-muted) 7.5%, transparent);
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 20%, transparent), transparent 65%), var(--color-background);
 }
 .signupArt {
+  left: auto;
+  right: 0;
   width: 42%;
 }
 .signupCopy {
-  grid-column: 2;
+  grid-column: 1;
   padding: 25px 0 20px;
   max-width: 360px;
 }
@@ -428,12 +430,12 @@
 }
 .footerBrand {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.13em;
 }
 .footerInner > p {
   color: var(--color-muted);
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   margin: 0;
 }
@@ -475,9 +477,7 @@
   .heroDescription {
     margin-block: 22px;
   }
-  .featured {
-    padding-block: 30px 20px;
-  }
+  
   .sectionHeading {
     margin-bottom: 16px;
   }
@@ -490,12 +490,9 @@
   .filmGenres {
     font-size: 9px;
   }
-  .editorialCopy {
-    padding-top: 38px;
-  }
+
   .signupCopy {
     max-width: 470px;
-    padding-top: 30px;
   }
   .signupText {
     font-size: 18px;
@@ -727,11 +724,12 @@
   }
   .signupArt::after {
     background: linear-gradient(
-      180deg,
-      transparent 60%,
-      var(--color-background)
+      90deg,
+      var(--color-background),
+      transparent 32%
     );
   }
+  
   .signupCopy {
     max-width: none;
     padding: 22px 0 28px;
@@ -896,6 +894,20 @@
   .signupFields button {
     padding-inline: 12px;
   }
+
+  .signupArt {
+    left: 0;
+    right: auto;
+  
+  }
+
+  .signupArt::after {
+    background: linear-gradient(
+    180deg,
+    transparent 60%,
+    var(--color-background)
+  );
+  
 }
 
 @media (max-width: 360px) {
@@ -913,4 +925,4 @@
     border-left: 0;
     border-top: 1px solid var(--color-accent);
   }
-}
+}}

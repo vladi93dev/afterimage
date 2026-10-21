@@ -35,16 +35,33 @@ export function NewsletterForm() {
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitted(true);
+    event.currentTarget.reset();
   }
 
   return (
     <form className={styles.signupForm} onSubmit={submit}>
-      <label className={styles.visuallyHidden} htmlFor="newsletter-email">Your email address</label>
+      <label className={styles.visuallyHidden} htmlFor="newsletter-email">
+        Your email address
+      </label>
       <div className={styles.signupFields}>
-        <input id="newsletter-email" name="email" type="email" autoComplete="email" placeholder="Your email address" required aria-describedby={submitted ? "signup-status" : undefined} />
-        <button type="submit">SUBSCRIBE <span aria-hidden="true">&#10230;</span></button>
+        <input
+          id="newsletter-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          placeholder="Your email address"
+          required
+          aria-describedby={submitted ? "signup-status" : undefined}
+        />
+        <button type="submit">
+          JOIN THE LIST <span aria-hidden="true">&#10230;</span>
+        </button>
       </div>
-      {submitted && <p id="signup-status" className={styles.signupStatus} role="status">Subscriptions open soon. Your email has not been saved.</p>}
+      {submitted && (
+        <p id="signup-status" className={styles.signupStatus} role="status">
+          Subscriptions open soon. Your email has not been saved.
+        </p>
+      )}
     </form>
   );
 }

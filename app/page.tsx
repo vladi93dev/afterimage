@@ -58,7 +58,7 @@ function Navigation({ footer = false }: { footer?: boolean }) {
     >
       <a href="#films">FILMS</a>
       <a href="#manifesto">MANIFESTO</a>
-      <a href="#about">ABOUT</a>
+      <a href="#join">JOIN</a>
     </nav>
   );
 }
@@ -222,9 +222,6 @@ export default function Home() {
                   <br className={styles.desktopBreak} /> Just bolder, stranger,
                   more human stories.
                 </p>
-                <a className={styles.button} href="#about">
-                  READ THE MANIFESTO <Arrow />
-                </a>
               </div>
             </div>
             <p
@@ -240,8 +237,6 @@ export default function Home() {
               KINDER
               <br />
               CINEMA
-              <br />
-              ELSEWHERE
             </p>
           </section>
 
@@ -297,7 +292,17 @@ export default function Home() {
           <Link className={styles.footerBrand} href="/">
             AFTERIMAGE
           </Link>
-          <p>FILMS FOR A DIFFERENT WORLD.</p>
+          <p>
+            Designed & developed by{" "}
+            <a
+              href="https://github.com/YOUR_USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vladi Semyonov
+            </a>{" "}
+            © 2026
+          </p>
           <Navigation footer />
           <div className={styles.socialMarks} aria-hidden="true">
             <span>𝕏</span>

@@ -19,6 +19,8 @@ html {
   min-width: 320px;
   min-height: 100%;
   scroll-padding-top: 1.5rem;
+  scroll-behavior: smooth;
+
 }
 body {
   margin: 0;
@@ -55,3 +57,8 @@ button:not(:disabled) {
   outline-offset: 3px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
