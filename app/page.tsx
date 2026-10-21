@@ -295,7 +295,7 @@ export default function Home() {
           <p>
             Designed & developed by{" "}
             <a
-              href="https://github.com/YOUR_USERNAME"
+              href="https://github.com/vladi93dev"
               target="_blank"
               rel="noopener noreferrer"
             >
