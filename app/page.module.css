@@ -218,7 +218,7 @@
   font-family: var(--font-serif), Georgia, serif;
   color: var(--color-muted);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   margin: 0;
   white-space: nowrap;
@@ -649,9 +649,7 @@
     gap: 10px;
     margin-bottom: 20px;
   }
-  .sectionHeading h2 {
-    font-size: 14px;
-  }
+ 
   .sectionHeading p {
     width: 100%;
     order: 3;

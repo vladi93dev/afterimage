@@ -103,7 +103,7 @@ export default function Home() {
                   className={`${styles.heroEyebrow} ${entrance.reveal} ${entrance.heroEyebrow}`}
                   data-entrance="hero-eyebrow"
                 >
-                  INDEPENDENT 
+                  INDEPENDENT
                   <br />
                   ARTHOUSE
                   <br />
@@ -144,7 +144,7 @@ export default function Home() {
           >
             <div className={styles.container}>
               <div className={styles.sectionHeading}>
-                <h2 id="films-title">FEATURED FILMS</h2>
+                <h2 id={styles.sectionEyebrow}>FEATURED FILMS</h2>
                 <span className={styles.headingLine} aria-hidden="true" />
               </div>
               <div className={styles.filmGrid}>
