@@ -298,33 +298,33 @@
   background: var(--color-muted);
   margin-top: 8px;
 }
-.manifesto,
+.about,
 .signup {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   background: var(--color-background);
 }
-.manifesto {
+.about {
   min-height: clamp(370px, 32vw, 480px);
   background-image:
     linear-gradient(#090b1066, #090b1099),
     url("/images/approved/grain-texture.webp");
   background-size: auto, 300px;
 }
-.manifestoArt,
+.aboutArt,
 .signupArt {
   position: absolute;
   inset: 0 auto 0 0;
   width: 42%;
   z-index: -1;
 }
-.manifestoArt img,
+.aboutArt img,
 .signupArt img {
   object-fit: cover;
   object-position: center;
 }
-.manifestoArt::after,
+.aboutArt::after,
 .signupArt::after {
   content: "";
   position: absolute;
@@ -332,7 +332,7 @@
   background: linear-gradient(90deg, transparent 68%, var(--color-background));
 }
 
-.manifestoText + .manifestoText {
+.aboutText + .aboutText {
   margin-top: 16px;
 }
 .editorialInner {
@@ -369,14 +369,14 @@
   letter-spacing: -0.02em;
   margin: 0;
 }
-.manifestoText {
+.aboutText {
   font-family: var(--font-serif), Georgia, serif;
   font-size: clamp(15px, 1.38vw, 20px);
   line-height: 1.35;
   margin: 12px 0;
   max-width: 38rem;
 }
-.manifestoMetadata {
+.aboutMetadata {
   position: absolute;
   bottom: 24px;
   right: 24%;
@@ -542,7 +542,7 @@
   .editorialCopy {
     padding-right: 25px;
   }
-  .manifestoMetadata {
+  .aboutMetadata {
     display: none;
   }
   .signupCopy {
@@ -673,19 +673,19 @@
   .filmGenres {
     font-size: 8px;
   }
-  .manifesto {
+  .about {
     min-height: 0;
     padding-top: 230px;
   }
-  .manifestoArt {
+  .aboutArt {
     width: 100%;
     height: 260px;
     bottom: auto;
   }
-  .manifestoArt img {
+  .aboutArt img {
     object-position: center 30%;
   }
-  .manifestoArt::after {
+  .aboutArt::after {
     background: linear-gradient(
       180deg,
       transparent 55%,
@@ -704,7 +704,7 @@
   .editorialCopy h2 {
     font-size: clamp(30px, 8.6vw, 45px);
   }
-  .manifestoText {
+  .aboutText {
     font-size: 17px;
     line-height: 1.3;
     margin-block: 16px;

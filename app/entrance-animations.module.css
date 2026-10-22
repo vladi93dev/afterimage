@@ -46,11 +46,11 @@
   --entrance-delay: 180ms;
 }
 
-.manifesto {
+.about {
   --entrance-duration: 1000ms;
 }
 
-.manifesto[data-entered="true"] {
+.about[data-entered="true"] {
   animation-name: editorial-in;
 }
 

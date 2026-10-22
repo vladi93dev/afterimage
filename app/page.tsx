@@ -56,9 +56,9 @@ function Navigation({ footer = false }: { footer?: boolean }) {
       className={footer ? styles.footerNav : styles.navigation}
       aria-label={footer ? "Footer navigation" : "Main navigation"}
     >
+      <a href="#main">HOME</a>
       <a href="#films">FILMS</a>
-      <a href="#manifesto">ABOUT</a>
-      <a href="#join">JOIN</a>
+      <a href="#about">ABOUT</a>
     </nav>
   );
 }
@@ -118,7 +118,7 @@ export default function Home() {
                 >
                   ALL THE LIVES
                   <br />
-                  WE HAVEN'T LIVED.
+                  WE HAVEN&apos;T LIVED.
                 </h1>
                 <p
                   className={`${styles.heroDescription} ${entrance.reveal} ${entrance.heroDescription}`}
@@ -156,13 +156,13 @@ export default function Home() {
           </section>
 
           <section
-            id="manifesto"
-            className={styles.manifesto}
-            aria-labelledby="manifesto-title"
+            id="about"
+            className={styles.about}
+            aria-labelledby="about-title"
           >
-            <div className={styles.manifestoArt}>
+            <div className={styles.aboutArt}>
               <Image
-                src="/images/approved/manifesto-sculpture.webp"
+                src="/images/approved/about-sculpture.webp"
                 alt="A weathered sculptural face turns upward through a veil of grain and rain."
                 fill
                 sizes="(max-width: 600px) 100vw, 42vw"
@@ -170,21 +170,21 @@ export default function Home() {
             </div>
             <div className={`${styles.editorialInner} ${styles.container}`}>
               <div
-                className={`${styles.editorialCopy} ${entrance.reveal} ${entrance.manifesto}`}
-                data-entrance="manifesto"
+                className={`${styles.editorialCopy} ${entrance.reveal} ${entrance.about}`}
+                data-entrance="about"
               >
                 <p className={styles.sectionEyebrow}>
                   ABOUT <span aria-hidden="true" />
                 </p>
-                <h2 id="manifesto-title">OFF THE RADAR.</h2>
-                <p id="about" className={styles.manifestoText}>
+                <h2 id="about-title">OFF THE RADAR.</h2>
+                <p className={styles.aboutText}>
                   Some films are overlooked, difficult to categorize, or simply
                   never find a wide audience. They come from different places,
                   tell unusual stories, and explore ideas outside conventional
                   cinema.
                 </p>
 
-                <p className={styles.manifestoText}>
+                <p className={styles.aboutText}>
                   AFTERIMAGE brings together independent, arthouse, and
                   experimental films, focusing on lesser-known filmmakers and
                   work worth discovering.
