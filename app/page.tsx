@@ -103,11 +103,11 @@ export default function Home() {
                   className={`${styles.heroEyebrow} ${entrance.reveal} ${entrance.heroEyebrow}`}
                   data-entrance="hero-eyebrow"
                 >
+                  INDEPENDENT 
+                  <br />
                   ARTHOUSE
                   <br />
-                  INDEPENDENT
-                  <br />
-                  EXPERIMENTAL
+                  CULT
                   <br />
                   CINEMA
                 </p>
