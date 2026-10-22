@@ -216,15 +216,18 @@
 }
 .sectionHeading h2 {
   font-family: var(--font-serif), Georgia, serif;
+  color: var(--color-muted);
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.2em;
   margin: 0;
   white-space: nowrap;
 }
+
 .headingLine {
+  width: 18px;
   height: 1px;
-  flex: 1;
+  flex: none;
   background: var(--color-muted);
   opacity: 0.6;
 }
@@ -395,7 +398,7 @@
   max-width: 360px;
 }
 .signupCopy .sectionEyebrow {
-  font-size: 9px;
+  font-size: 11px;
   margin-bottom: 9px;
 }
 .signupCopy h2 {
