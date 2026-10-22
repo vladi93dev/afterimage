@@ -56,16 +56,17 @@ function Navigation({ footer = false }: { footer?: boolean }) {
       className={footer ? styles.footerNav : styles.navigation}
       aria-label={footer ? "Footer navigation" : "Main navigation"}
     >
-      <a href="#main">HOME</a>
+      {footer && <a href="#top">HOME</a>}
       <a href="#films">FILMS</a>
       <a href="#about">ABOUT</a>
+      {!footer && <a href="#join">JOIN</a>}
     </nav>
   );
 }
 
 export default function Home() {
   return (
-    <div className={styles.site}>
+    <div id="top" className={styles.site}>
       <a className={styles.skipLink} href="#main">
         Skip to content
       </a>
