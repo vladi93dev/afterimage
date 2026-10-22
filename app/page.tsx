@@ -57,7 +57,7 @@ function Navigation({ footer = false }: { footer?: boolean }) {
       aria-label={footer ? "Footer navigation" : "Main navigation"}
     >
       <a href="#films">FILMS</a>
-      <a href="#manifesto">MANIFESTO</a>
+      <a href="#manifesto">ABOUT</a>
       <a href="#join">JOIN</a>
     </nav>
   );
@@ -135,32 +135,6 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <aside
-              className={styles.heroAside}
-              aria-label="AFTERIMAGE's point of view"
-            >
-              <p className={styles.handwritten}>
-                Different
-                <br />
-                films
-                <br />
-                for a<br />
-                darker
-                <br />
-                tomorrow.
-              </p>
-              <p className={styles.sideMetadata}>
-                CINEMA
-                <br />
-                PEOPLE
-                <br />
-                PLACES
-                <br />
-                IDEAS
-                <br />
-                ESCAPE
-              </p>
-            </aside>
           </section>
 
           <section
@@ -172,10 +146,6 @@ export default function Home() {
               <div className={styles.sectionHeading}>
                 <h2 id="films-title">FEATURED FILMS</h2>
                 <span className={styles.headingLine} aria-hidden="true" />
-                <p>THREE DOORS IN. MANY MORE BEYOND.</p>
-                <span className={styles.chevrons} aria-hidden="true">
-                  &#8249; &nbsp; &#8250;
-                </span>
               </div>
               <div className={styles.filmGrid}>
                 {films.map((film) => (
@@ -204,40 +174,23 @@ export default function Home() {
                 data-entrance="manifesto"
               >
                 <p className={styles.sectionEyebrow}>
-                  OUR MANIFESTO <span aria-hidden="true" />
+                  ABOUT <span aria-hidden="true" />
                 </p>
-                <h2 id="manifesto-title">
-                  THE WEIGHT OF
-                  <br />
-                  WHAT REMAINS.
-                </h2>
+                <h2 id="manifesto-title">OFF THE RADAR.</h2>
                 <p id="about" className={styles.manifestoText}>
-                  AFTERIMAGE exists for the misfits, the night-watchers,
-                  <br className={styles.desktopBreak} /> the beauty seekers, the
-                  ones who feel out of place.
-                  <br className={styles.desktopBreak} /> We champion films that
-                  disturb, question, and expand
-                  <br className={styles.desktopBreak} /> what cinema can be. No
-                  algorithms. No safe choices.
-                  <br className={styles.desktopBreak} /> Just bolder, stranger,
-                  more human stories.
+                  Some films are overlooked, difficult to categorize, or simply
+                  never find a wide audience. They come from different places,
+                  tell unusual stories, and explore ideas outside conventional
+                  cinema.
+                </p>
+
+                <p className={styles.manifestoText}>
+                  AFTERIMAGE brings together independent, arthouse, and
+                  experimental films, focusing on lesser-known filmmakers and
+                  work worth discovering.
                 </p>
               </div>
             </div>
-            <p
-              className={`${styles.sideMetadata} ${styles.manifestoMetadata}`}
-              aria-hidden="true"
-            >
-              STRANGER
-              <br />
-              BRAVER
-              <br />
-              DARKER
-              <br />
-              KINDER
-              <br />
-              CINEMA
-            </p>
           </section>
 
           <section
@@ -259,9 +212,9 @@ export default function Home() {
                 data-entrance="newsletter"
               >
                 <p className={styles.sectionEyebrow}>
-                  STAY IN THE DARK <span aria-hidden="true" />
+                  NEWSLETTER <span aria-hidden="true" />
                 </p>
-                <h2 id="join-title">JOIN AFTERIMAGE</h2>
+                <h2 id="join-title">THE AFTERIMAGE LETTER</h2>
                 <p id="journal" className={styles.signupText}>
                   Occasional letters on forgotten films, new discoveries,
                   <br className={styles.desktopBreak} /> and the strange corners
@@ -270,20 +223,6 @@ export default function Home() {
                 <NewsletterForm />
               </div>
             </div>
-            <p
-              className={`${styles.handwritten} ${styles.signupNote}`}
-              aria-hidden="true"
-            >
-              Good
-              <br />
-              films
-              <br />
-              find
-              <br />
-              strange
-              <br />
-              people.
-            </p>
           </section>
         </main>
       </div>
